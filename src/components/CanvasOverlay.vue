@@ -1,7 +1,7 @@
 <template>
   <div
   :style="[
-      selectedTool === 'delete' || selectedTool === 'deletePieceOfLine'
+      selectedTool === 'delete'
         ? { cursor: selectedCursor }
         : { cursor: rectangleCursor },
     ]"
@@ -10,14 +10,14 @@
   <canvas
   id="canvas2"
   class="canvas-overlay"
-  :width="560"
-  :height="788"
+  :width="876"
+  :height="710"
   ></canvas>
   <canvas
     id="canvas"
     class="canvas-overlay"
-    :width="560"
-    :height="788"
+    :width="876"
+    :height="710"
     @mousedown="handleCanvasMouseDown"
     @mousemove="handleCanvasMouseMove"
     @mouseup="handleCanvasMouseUp"
@@ -62,8 +62,8 @@ export default {
       selectedDrawIndex: 0,
       targetRowPos: 0,
       targetLinePos: 0,
-      pageWidth: 560,
-      pageHeight: 788,
+      pageWidth: 876,
+      pageHeight: 710,
       historyDrawActions: [],
       historyPieceCount: 0,
       rect: {},
@@ -313,64 +313,6 @@ export default {
         y: action.y,
       });
     },
-    deletePieceOfLine() {
-      /// TODO: refactor this
-      this.drawActions.map((action, index) => {
-        this.mouseX = Math.round(this.mouseX);
-        this.mouseY = Math.round(this.mouseY);
-        if (this.isMouseOnLine(this.mouseX, this.mouseY, action) && action.lineWidth) {
-          this.addToHistory(action);
-          const nodePoint = this.backColForPreviewLine(this.mouseX, this.drawActions, this.mouseY)
-          const nodePoint2 = this.nextColForPreviewLine(nodePoint, this.drawActions, action.startY, this.pageHeight)
-          const secondPieceWidth = action.lineWidth - (nodePoint2 - action.startX)
-          action.lineWidth = nodePoint - action.startX;
-          action.drawingType = "rowPiece";
-          this.setDeletedPieceCount(this.deletedPieceCount + 1);
-          this.setDeletedLineIndex(index);
-          this.drawActions.push({
-            startX: nodePoint2,
-            startY: action.startY,
-            lineWidth: secondPieceWidth,
-            lineHeight: 0,
-            drawingType: "rowPiece",
-            bottom: this.pageHeight,
-            height: this.pageHeight,
-            left: 902,
-            right: 1542,
-            top: 0,
-            width: this.pageWidth,
-            x: 902,
-            y: 0,
-          });
-          this.setDrawCount(this.drawCount + 1);
-        } else if (this.isMouseOnLine(this.mouseX, this.mouseY, action) && action.lineHeight) {
-          this.addToHistory(action);
-          const nodePoint = this.backRowForPreviewLine(this.mouseY, this.drawActions, this.mouseX)
-          const nodePoint2 = this.nextRowForPreviewLine(nodePoint, this.drawActions, action.startX, this.pageHeight)
-          const secondPieceHeight = action.lineHeight - (nodePoint2 - action.startY)
-          action.lineHeight = nodePoint - action.startY;
-          action.drawingType = "columnPiece";
-          this.setDeletedPieceCount(this.deletedPieceCount + 1); 
-          this.setDeletedLineIndex(index);
-          this.drawActions.push({
-            startX: action.startX,
-            startY: nodePoint2,
-            lineWidth: 0,
-            lineHeight: secondPieceHeight,
-            drawingType: "columnPiece",
-            bottom: this.pageHeight,
-            height: this.pageHeight,
-            left: 902,
-            right: 1542,
-            top: 0,
-            width: this.pageWidth,
-            x: 902,
-            y: 0,
-          });
-          this.setDrawCount(this.drawCount + 1);
-        }
-      })
-    },
     handleCanvasMouseDown(e) {
       if(this.isGridActive) return
       this.ctx.setLineDash([]);
@@ -383,7 +325,6 @@ export default {
       const drawingTypes = {
         resizableRectangle: () => this.drawingRectangle(),
         delete: () => this.deleteDrawing(),
-        deletePieceOfLine: () => this.deletePieceOfLine(),
         colPerLine: () => this.drawingRectangle(),
         label: () => this.addLabel(),
       };
@@ -626,7 +567,6 @@ export default {
         resizableRectangle: () => this.drawRectangleWithMouseUp(),
         delete: () => this.deleteDrawingUp(),
         dragLine: () => this.drawRectangleWithMouseUp(),
-        deletePieceOfLine: () => this.deletePieceOfLine(),
         colPerLine: () => this.drawRectangleWithMouseUp(),
         label: () => this.drawRectangleWithMouseUp(),
       };
@@ -827,11 +767,11 @@ export default {
         this.setDrawActions([
         {
           bottom:951,
-          height:788,
+          height:710,
           left:1075,
           right:1715,
           top:51,
-          width:560,
+          width:876,
           x:1075,
           y:51
         }

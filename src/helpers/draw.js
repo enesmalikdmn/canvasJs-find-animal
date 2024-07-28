@@ -681,10 +681,10 @@ export const getDrawAction = (cells, drawActionsRectangle) => {
   cells.map((cell) => {
     if (cell.x2 !== drawActionsRectangle.startX + drawActionsRectangle.w) {
       drawActions.push({
-        bottom:788,
+        bottom:710,
         drawingType: "column",
         h:0,
-        height:788,
+        height:710,
         isSelected:false,
         left:902,
         lineHeight: cell.y2 - cell.y1,
@@ -694,17 +694,17 @@ export const getDrawAction = (cells, drawActionsRectangle) => {
         startY: cell.y1,
         top:0,
         w:0,
-        width:560,
+        width:876,
         x:902,
         y:0,
       });
     }
     if (cell.y2 !== drawActionsRectangle.startY + drawActionsRectangle.h) {
       drawActions.push({
-        bottom:788,
+        bottom:710,
         drawingType: "row",
         h:0,
-        height:788,
+        height:710,
         isSelected:false,
         left:902,
         lineHeight: 0,
@@ -714,7 +714,7 @@ export const getDrawAction = (cells, drawActionsRectangle) => {
         startY: cell.y2,
         top:0,
         w:0,
-        width:560,
+        width:876,
         x:902,
         y:0,
       });
@@ -727,10 +727,10 @@ export const getDrawAction = (cells, drawActionsRectangle) => {
   //       // delete drawAction and drawAction2 in drawActions
   //       drawActions.splice(index, 1);
   //       const test = {
-  //         bottom:788,
+  //         bottom:710,
   //         drawingType: "row",
   //         h:0,
-  //         height:788,
+  //         height:710,
   //         isSelected:false,
   //         left:902,
   //         lineHeight: 0,
@@ -740,7 +740,7 @@ export const getDrawAction = (cells, drawActionsRectangle) => {
   //         startY: drawAction.startY,
   //         top:0,
   //         w:0,
-  //         width:560,
+  //         width:876,
   //         x:902,
   //         y:4,
   //       }
@@ -756,10 +756,10 @@ export const getDrawAction = (cells, drawActionsRectangle) => {
   //     //   drawActions.splice(index, 1);
   //     //   drawActions.splice(i, 1);
   //     //   drawActions.push({
-  //     //     bottom:788,
+  //     //     bottom:710,
   //     //     drawingType: "column",
   //     //     h:0,
-  //     //     height:788,
+  //     //     height:710,
   //     //     isSelected:false,
   //     //     left:902,
   //     //     lineHeight: drawAction.lineHeight + drawAction2.lineHeight,
@@ -769,7 +769,7 @@ export const getDrawAction = (cells, drawActionsRectangle) => {
   //     //     startY: drawAction.startY,
   //     //     top:0,
   //     //     w:0,
-  //     //     width:560,
+  //     //     width:876,
   //     //     x:902,
   //     //     y:0,
   //     //   })

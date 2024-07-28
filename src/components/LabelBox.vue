@@ -80,6 +80,7 @@ export default {
           if (item.x1 === cell.x1 && item.y1 === cell.y1 && item.x2 === cell.x2 && item.y2 === cell.y2) {
             if (e.target.checked) {
               item.labelName = [...item.labelName, e.target.id];
+              console.log(item);
               this.$emit("fillCell", item);
             } else {
               item.labelName = item.labelName.filter(

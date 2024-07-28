@@ -21,7 +21,7 @@
               height: '100%',
               }" >
               <div class="absolute">
-                <PdfViewer />
+                <ImgViewer />
                 <CanvasOverlay />
               </div>
           </div>
@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import PdfViewer from './PdfViewer';
+import ImgViewer from './ImgViewer';
 import CanvasOverlay from './CanvasOverlay';
 import { mapActions, mapGetters } from 'vuex';
 import CanvasDrawMixin from "./mixins/CanvasDrawMixin";
@@ -38,7 +38,7 @@ import { getDrawAction } from "../../src/helpers/draw.js"
 export default {
   name: "TheViewer",
   mixins: [CanvasDrawMixin],
-  components: { PdfViewer, CanvasOverlay },
+  components: { ImgViewer, CanvasOverlay },
   data () {
       return {
         imgInfo: {
@@ -76,11 +76,11 @@ export default {
     resetDrawActions () {
       this.setDrawActions([{
         bottom:951,
-        height:788,
+        height:710,
         left:1075,
         right:1715,
         top:51,
-        width:560,
+        width:876,
         x:1075,
         y:51
       }])

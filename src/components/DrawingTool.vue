@@ -4,7 +4,7 @@
       <dp-tooltip 
       class="w-full"
       :content="item.action === 'delete' ? 'Delete the selected element' : 'Delete the selected piece of element' "
-      v-if="item.action === 'delete' || item.action === 'deletePieceOfLine'"
+      v-if="item.action === 'delete'"
       >
         <dp-button
           class="w-full text-sm"
@@ -17,7 +17,7 @@
       </dp-tooltip>
       <dp-button
           class="w-full text-sm"
-          v-if="item.action !== 'delete' && item.action !== 'deletePieceOfLine'"
+          v-if="item.action !== 'delete'"
           :disabled="selectedTool === item.action"
           :type="selectedTool === item.action ? 'primary' : 'neutral'"
           @click="handleSelectedTool(item)"
@@ -99,10 +99,6 @@ export default {
           name: "Delete",
           action: "delete",
         },
-        {
-          name: "Delete Piece Of Line",
-          action: "deletePieceOfLine",
-        },
       ],
     };
   },
@@ -175,8 +171,8 @@ export default {
         this.setTableData({rectangle: rectangle})
     },
     setWidthAndHeight (rest, rectangle) {
-        const widthScale = 560;
-        const heightScale = 788;
+        const widthScale = 876;
+        const heightScale = 710;
         rest.x1 = rest.x1 / widthScale;
         rest.x2 = rest.x2 / widthScale;
         rest.y1 = rest.y1 / heightScale;
