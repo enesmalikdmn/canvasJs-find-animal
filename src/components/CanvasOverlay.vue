@@ -10,21 +10,21 @@
   <canvas
   id="canvas2"
   class="canvas-overlay"
-  :width="1000"
-  :height="810"
+  :width="876"
+  :height="710"
   ></canvas>
   <canvas
     id="canvas"
     class="canvas-overlay"
-    :width="1000"
-    :height="810"
+    :width="876"
+    :height="710"
     @mousedown="handleCanvasMouseDown"
     @mousemove="handleCanvasMouseMove"
     @mouseup="handleCanvasMouseUp"
   ></canvas>
-  <!-- <i class="dp-icon-x-circled text-red-700 ease-linear	"
+  <i class="el-icon-circle-close text-red-700 ease-linear	"
   @click="handleDelete"
-  :style="{  position: 'absolute', top: getIconYPosition, left: getIconXPosition, display: showDeleteIcon ? 'block' : 'none'}" /> -->
+  :style="{  position: 'absolute', top: getIconYPosition, left: getIconXPosition, display: showDeleteIcon ? 'block' : 'none'}" />
   <LabelBox
   :y=labelYPosition
   :x=labelXPosition
@@ -62,8 +62,8 @@ export default {
       selectedDrawIndex: 0,
       targetRowPos: 0,
       targetLinePos: 0,
-      pageWidth: 1000,
-      pageHeight: 810,
+      pageWidth: 876,
+      pageHeight: 710,
       historyDrawActions: [],
       historyPieceCount: 0,
       rect: {},
@@ -767,11 +767,11 @@ export default {
         this.setDrawActions([
         {
           bottom:951,
-          height:810,
+          height:710,
           left:1075,
           right:1715,
           top:51,
-          width:1000,
+          width:876,
           x:1075,
           y:51
         }

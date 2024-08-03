@@ -3,14 +3,16 @@
       <div class="viewer-wrapper flex flex-col"
       :style="{
           height: '100vh',
-          overflow: 'scroll',
       }"
-      >
-          <div class="w-full flex">
-            <div class="flex absolute flex-col ml-2">
-              <!-- <dp-switch class="flex justify-center text-sm" :style="{right: 0, paddingTop: '3.5rem', paddingRight: '0.5rem'}"  v-model="drawingAutoRow">Auto Draw</dp-switch>  -->
-            </div>
-          </div>
+      > 
+        <el-switch
+          class="flex justify-center text-sm !pt-12"
+          v-model="drawingAutoRow"
+          active-color="#13ce66"
+          inactive-color="#ff4949"
+          active-text="Auto Draw Column Active"
+          inactive-text="Auto Draw Column Inactive">
+        </el-switch>
           <div :style="{
               scale: scale,
               transformOrigin: '0 0',
@@ -44,7 +46,7 @@ export default {
       return {
         imgInfo: {
           imgId: 0,
-        },
+        }
       };
   },
   computed: {
@@ -52,12 +54,12 @@ export default {
     ...mapGetters('packages', ['activePackage', 'activePage', 'firstLabelPackage']), 
     ...mapGetters("viewer", ["rotateDegree", "tableData", "pdfWidth", "pdfHeight", "scale", "drawActions", "imgDrawingList", "imgLabelList", "cellOfRectangle", "selectedTool"]),
     drawingAutoRow: {
-      get () {
-        return this.$store.state.drawingAutoRow;
+      get() {
+        return this.$store.getters['viewer/drawingAutoRow'];
       },
-      set (value) {
-        this.$store.dispatch("viewer/setDrawingAutoRow", value);
-      },
+      set(value) {
+        this.$store.dispatch('viewer/setDrawingAutoRow', value);
+      }
     }
   },
   methods: {
@@ -77,11 +79,11 @@ export default {
     resetDrawActions () {
       this.setDrawActions([{
         bottom:951,
-        height:810,
+        height:710,
         left:1075,
         right:1715,
         top:51,
-        width:1000,
+        width:876,
         x:1075,
         y:51
       }])

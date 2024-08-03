@@ -60,8 +60,8 @@ export default {
             // (line.bbox.x1 - line.bbox.x0) - 11,
             // (line.bbox.y1 - line.bbox.y0) - 195,
             // "row",
-            // 810,
-            // 1000
+            // 710,
+            // 876
             // ))
         },
     }

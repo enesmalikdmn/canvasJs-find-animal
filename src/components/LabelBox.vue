@@ -1,24 +1,30 @@
 <template>
-  <div v-if="showLabelBox" :style="{ ...labelBoxStyle }">
-        <!-- <i class="dp-icon-x flex justify-end text-white cursor-pointer text-base pr-1"
-        @click="$emit('close')"
-        /> -->
-      <div class="flex flex-wrap"
-      :style="{ gap: '0.4rem', padding: '0.6px' }"
-      >
-        <div
-        class="flex w-32 justify-start gap-1"
-        v-for="(item, index) in getLabelBoxItems" :key="index"
-        >
-          <input
-          type="checkbox"
-          :id="item.label"
-          :checked="isChecked(item)"
-          @input="handleLabelChange"
-          />
-          <label class="flex justify-center items-center" >{{ item.label }}</label>
-        </div>
-      </div>
+  <div>
+    <el-dialog
+        title="Choose an animal"
+        :modal="false"
+        :visible.sync="isDialogVisible"
+        width="30%"
+        :before-close="() => $emit('close')">
+        <div class="flex flex-wrap"
+          :style="{ gap: '0.4rem', padding: '0.6px' }"
+          >
+            <div
+            class="flex justify-start"
+            v-for="(item, index) in getLabelBoxItems" :key="index"
+            >
+              <div class="flex w-20 gap-1">
+                <input
+                type="checkbox"
+                :id="item.label"
+                :checked="isChecked(item)"
+                @input="handleLabelChange"
+                />
+                <label class="flex justify-center items-center" >{{ item.label }}</label>
+              </div>
+            </div>
+          </div>
+      </el-dialog>
   </div>
 </template>
 <script>
@@ -27,6 +33,11 @@ import { labelBoxItems } from "./LabelBoxSchema.js";
 
 export default {
   name: "LabelBox",
+  data() {
+    return {
+      isDialogVisible: false,
+    };
+  },
   props: {
     x: {
       type: Number,
@@ -80,7 +91,6 @@ export default {
           if (item.x1 === cell.x1 && item.y1 === cell.y1 && item.x2 === cell.x2 && item.y2 === cell.y2) {
             if (e.target.checked) {
               item.labelName = [...item.labelName, e.target.id];
-              console.log(item);
               this.$emit("fillCell", item);
             } else {
               item.labelName = item.labelName.filter(
@@ -103,6 +113,9 @@ export default {
         }
       });
     },
+    showLabelBox() {
+      this.isDialogVisible = this.showLabelBox;
+    }
   },
 };
 </script>

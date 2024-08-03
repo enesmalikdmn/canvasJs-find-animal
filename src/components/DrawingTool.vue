@@ -1,72 +1,15 @@
 <template>
-  <div class="table-tool flex flex-col max-w-[300px] justify-center p-4 border-r-1 border-gray-500" :style="{gap: '12px'}">
-    <div class="flex"  v-for="(item, index) in toolItems" :key="index">
-      <!-- <dp-tooltip 
-      class="w-full"
-      :content="item.action === 'delete' ? 'Delete the selected element' : 'Delete the selected piece of element' "
-      v-if="item.action === 'delete'"
-      >
-        <dp-button
-          class="w-full text-sm"
+  <div class="table-tool flex w-full justify-center p-4 border-r-1 border-gray-500 gap-3">
+    <div class="flex justify-center items-center"  v-for="(item, index) in toolItems" :key="index">
+      <el-button
+          type="warning"
+          class=" text-sm h-10"
           :disabled="selectedTool === item.action"
-          :type="selectedTool === item.action ? 'primary' : 'neutral'"
+          :plain="selectedTool === item.action ? true : false"
           @click="handleSelectedTool(item)"
         >
           {{ item.name }}
-        </dp-button>
-      </dp-tooltip>
-      <dp-button
-          class="w-full text-sm"
-          v-if="item.action !== 'delete'"
-          :disabled="selectedTool === item.action"
-          :type="selectedTool === item.action ? 'primary' : 'neutral'"
-          @click="handleSelectedTool(item)"
-        >
-          {{ item.name }}
-      </dp-button>
-    </div>
-     <dp-button
-    class="w-full text-sm"
-      @click="zoomIn"
-    >
-    Zoom In
-    </dp-button>
-    <dp-button
-    class="w-full text-sm"
-    @click="zoomOut"
-    >
-    Zoom Out
-    </dp-button> -->
-    <!-- <div class="w-full flex justify-between">
-      <dp-button class="w-12"
-      @click="handleRotate(rotateDegree + 0.5)"
-      >
-        <i class="dp-icon-rotate" />
-      </dp-button>
-      <dp-button class="w-12"
-      @click="handleRotate(rotateDegree - 0.5)"
-      >
-        <i class="dp-icon-rotate-left" />
-      </dp-button>
-      <dp-button
-      class="w-12"
-      @click="checkRotate"
-      >
-        <i class="dp-icon-check" />
-      </dp-button>
-    </div> -->
-    <!-- <div
-      class="absolute bottom-0 table-save-button h-12 border border-gray-900 flex items-center justify-center"
-    >
-      <dp-button
-        type="primary"
-        size="small"
-        @click="handleSave"
-        class="bg-blue-1000 w-32 rounded-full"
-        :disabled="selectedTool === 'resizableRectangle'"
-      >
-        <span class="text-sm font-medium uppercase">Save</span>
-      </dp-button>-->
+        </el-button>
     </div> 
   </div>
 </template>
@@ -171,8 +114,8 @@ export default {
         this.setTableData({rectangle: rectangle})
     },
     setWidthAndHeight (rest, rectangle) {
-        const widthScale = 1000;
-        const heightScale = 810;
+        const widthScale = 876;
+        const heightScale = 710;
         rest.x1 = rest.x1 / widthScale;
         rest.x2 = rest.x2 / widthScale;
         rest.y1 = rest.y1 / heightScale;
