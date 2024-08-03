@@ -4,7 +4,6 @@
       :style="{
           height: '100vh',
           overflow: 'scroll',
-          backgroundColor: '#F5F5F5',
       }"
       >
           <div class="w-full flex">
@@ -17,18 +16,20 @@
               transformOrigin: '0 0',
               display: 'flex',
               justifyContent: 'center',
-              alignItems: 'center',
-              height: '100%',
+              alignItems: 'end',
+              height: '85%',
               }" >
               <div class="absolute">
                 <ImgViewer />
                 <CanvasOverlay />
               </div>
           </div>
+          <DrawingTool style="height: 15%;" />
       </div>
   </div>
 </template>
 <script>
+import DrawingTool from './DrawingTool.vue';
 import ImgViewer from './ImgViewer';
 import CanvasOverlay from './CanvasOverlay';
 import { mapActions, mapGetters } from 'vuex';
@@ -38,7 +39,7 @@ import { getDrawAction } from "../../src/helpers/draw.js"
 export default {
   name: "TheViewer",
   mixins: [CanvasDrawMixin],
-  components: { ImgViewer, CanvasOverlay },
+  components: { ImgViewer, CanvasOverlay, DrawingTool },
   data () {
       return {
         imgInfo: {
@@ -76,11 +77,11 @@ export default {
     resetDrawActions () {
       this.setDrawActions([{
         bottom:951,
-        height:710,
+        height:810,
         left:1075,
         right:1715,
         top:51,
-        width:876,
+        width:1000,
         x:1075,
         y:51
       }])
@@ -207,7 +208,7 @@ export default {
 <style scoped>
 .viewer-container {
   width: calc(100% - (64px + 200px + 362px));
-height: 100vh;
+  height: 100vh;
 }
 .viewer-wrapper {
 z-index: 1;

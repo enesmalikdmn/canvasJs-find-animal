@@ -1,5 +1,5 @@
 <template>
-  <div class="table-tool flex flex-col p-4 border-r-1 border-gray-500" :style="{gap: '12px'}">
+  <div class="table-tool flex flex-col max-w-[300px] justify-center p-4 border-r-1 border-gray-500" :style="{gap: '12px'}">
     <div class="flex"  v-for="(item, index) in toolItems" :key="index">
       <dp-tooltip 
       class="w-full"
@@ -25,7 +25,7 @@
           {{ item.name }}
       </dp-button>
     </div>
-    <dp-button
+    <!-- <dp-button
     class="w-full text-sm"
       @click="zoomIn"
     >
@@ -36,7 +36,7 @@
     @click="zoomOut"
     >
     Zoom Out
-    </dp-button>
+    </dp-button> -->
     <div class="w-full flex justify-between">
       <dp-button class="w-12"
       @click="handleRotate(rotateDegree + 0.5)"
@@ -83,14 +83,14 @@ export default {
           name: "Drawing",
           action: "resizableRectangle",
         },
-        {
-          name: "Horizontal / Vertical Line (Shortcut: S)",
-          action: "changeLineAngle",
-        },
-        {
-          name: "Cell / Rectangle Inside Line (Shortcut: W)",
-          action: "changeLineSize",
-        },
+        // {
+        //   name: "Horizontal / Vertical Line (Shortcut: S)",
+        //   action: "changeLineAngle",
+        // },
+        // {
+        //   name: "Cell / Rectangle Inside Line (Shortcut: W)",
+        //   action: "changeLineSize",
+        // },
         {
           name: "Clear All",
           action: "clearAll",
@@ -171,8 +171,8 @@ export default {
         this.setTableData({rectangle: rectangle})
     },
     setWidthAndHeight (rest, rectangle) {
-        const widthScale = 876;
-        const heightScale = 710;
+        const widthScale = 1000;
+        const heightScale = 810;
         rest.x1 = rest.x1 / widthScale;
         rest.x2 = rest.x2 / widthScale;
         rest.y1 = rest.y1 / heightScale;

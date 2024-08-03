@@ -5,11 +5,11 @@ const state = {
   drawActions: [{
     drawingMode: 'resizableRectangle',
     bottom:951,
-    height:710,
+    height:810,
     left:1075,
     right:1715,
     top:51,
-    width:876,
+    width:1000,
     x:1075,
     y:51
   }],

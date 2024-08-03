@@ -10,14 +10,14 @@
   <canvas
   id="canvas2"
   class="canvas-overlay"
-  :width="876"
-  :height="710"
+  :width="1000"
+  :height="810"
   ></canvas>
   <canvas
     id="canvas"
     class="canvas-overlay"
-    :width="876"
-    :height="710"
+    :width="1000"
+    :height="810"
     @mousedown="handleCanvasMouseDown"
     @mousemove="handleCanvasMouseMove"
     @mouseup="handleCanvasMouseUp"
@@ -62,8 +62,8 @@ export default {
       selectedDrawIndex: 0,
       targetRowPos: 0,
       targetLinePos: 0,
-      pageWidth: 876,
-      pageHeight: 710,
+      pageWidth: 1000,
+      pageHeight: 810,
       historyDrawActions: [],
       historyPieceCount: 0,
       rect: {},
@@ -767,11 +767,11 @@ export default {
         this.setDrawActions([
         {
           bottom:951,
-          height:710,
+          height:810,
           left:1075,
           right:1715,
           top:51,
-          width:876,
+          width:1000,
           x:1075,
           y:51
         }

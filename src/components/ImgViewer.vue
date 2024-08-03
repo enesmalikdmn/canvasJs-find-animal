@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img :style="{width: '876px', height: '710px', transform: `rotate(${rotateDegree}deg)`}" id=img src="../assets/animals-1.png" alt="ingilizce-hayvanlar-1" />
+        <img :style="{width: '876px', height: '710px', transform: `rotate(${rotateDegree}deg)`}" id=img src="../assets/animals-test.png" alt="ingilizce-hayvanlar-1" />
     </div>
 </template>
 <script>
@@ -60,8 +60,8 @@ export default {
             // (line.bbox.x1 - line.bbox.x0) - 11,
             // (line.bbox.y1 - line.bbox.y0) - 195,
             // "row",
-            // 710,
-            // 876
+            // 810,
+            // 1000
             // ))
         },
     }
