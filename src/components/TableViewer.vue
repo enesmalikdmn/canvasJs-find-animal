@@ -8,7 +8,7 @@
       >
           <div class="w-full flex">
             <div class="flex absolute flex-col ml-2">
-              <dp-switch class="flex justify-center text-sm" :style="{right: 0, paddingTop: '3.5rem', paddingRight: '0.5rem'}"  v-model="drawingAutoRow">Auto Draw</dp-switch> 
+              <!-- <dp-switch class="flex justify-center text-sm" :style="{right: 0, paddingTop: '3.5rem', paddingRight: '0.5rem'}"  v-model="drawingAutoRow">Auto Draw</dp-switch>  -->
             </div>
           </div>
           <div :style="{

@@ -2,12 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import Digikit from 'digikit';
 import './assets/index.css';
 import './assets/tailwind.css'
 
 
-Vue.use(Digikit);
 Vue.config.productionTip = false
 // Vue.directive('click-outside', {
 //   bind: function (element, binding, vnode) {

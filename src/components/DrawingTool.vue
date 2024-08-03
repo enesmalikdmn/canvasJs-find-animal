@@ -1,7 +1,7 @@
 <template>
   <div class="table-tool flex flex-col max-w-[300px] justify-center p-4 border-r-1 border-gray-500" :style="{gap: '12px'}">
     <div class="flex"  v-for="(item, index) in toolItems" :key="index">
-      <dp-tooltip 
+      <!-- <dp-tooltip 
       class="w-full"
       :content="item.action === 'delete' ? 'Delete the selected element' : 'Delete the selected piece of element' "
       v-if="item.action === 'delete'"
@@ -25,7 +25,7 @@
           {{ item.name }}
       </dp-button>
     </div>
-    <!-- <dp-button
+     <dp-button
     class="w-full text-sm"
       @click="zoomIn"
     >
@@ -37,7 +37,7 @@
     >
     Zoom Out
     </dp-button> -->
-    <div class="w-full flex justify-between">
+    <!-- <div class="w-full flex justify-between">
       <dp-button class="w-12"
       @click="handleRotate(rotateDegree + 0.5)"
       >
@@ -54,7 +54,7 @@
       >
         <i class="dp-icon-check" />
       </dp-button>
-    </div>
+    </div> -->
     <!-- <div
       class="absolute bottom-0 table-save-button h-12 border border-gray-900 flex items-center justify-center"
     >
@@ -66,8 +66,8 @@
         :disabled="selectedTool === 'resizableRectangle'"
       >
         <span class="text-sm font-medium uppercase">Save</span>
-      </dp-button>
-    </div> -->
+      </dp-button>-->
+    </div> 
   </div>
 </template>
 <script>

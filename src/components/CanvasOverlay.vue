@@ -22,9 +22,9 @@
     @mousemove="handleCanvasMouseMove"
     @mouseup="handleCanvasMouseUp"
   ></canvas>
-  <i class="dp-icon-x-circled text-red-700 ease-linear	"
+  <!-- <i class="dp-icon-x-circled text-red-700 ease-linear	"
   @click="handleDelete"
-  :style="{  position: 'absolute', top: getIconYPosition, left: getIconXPosition, display: showDeleteIcon ? 'block' : 'none'}" />
+  :style="{  position: 'absolute', top: getIconYPosition, left: getIconXPosition, display: showDeleteIcon ? 'block' : 'none'}" /> -->
   <LabelBox
   :y=labelYPosition
   :x=labelXPosition

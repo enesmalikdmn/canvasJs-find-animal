@@ -1,8 +1,8 @@
 <template>
   <div v-if="showLabelBox" :style="{ ...labelBoxStyle }">
-        <i class="dp-icon-x flex justify-end text-white cursor-pointer text-base pr-1"
+        <!-- <i class="dp-icon-x flex justify-end text-white cursor-pointer text-base pr-1"
         @click="$emit('close')"
-        />
+        /> -->
       <div class="flex flex-wrap"
       :style="{ gap: '0.4rem', padding: '0.6px' }"
       >
