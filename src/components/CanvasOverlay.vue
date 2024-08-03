@@ -81,7 +81,7 @@ export default {
   },
   computed: {
     ...mapGetters('packages', ['activePage']),
-    ...mapGetters("viewer", ["isPreviewLineActive", "selectedTool", "drawActions", "lineColor", "selectedLineColor", "drawCount", "previewLineType", "sensitivity", "deletedCount", "deletedPieceCount", "deletedLineIndex", "pdfWidth", "pdfHeight", "scale", "rotateDegree", "isGridActive", "cellOfRectangle", "selectedLineInfo", "selectedCell", "columnLabels", "selectedRectangles", "filledCells"]),
+    ...mapGetters("viewer", ["isPreviewLineActive", "selectedTool", "drawActions", "drawCount", "previewLineType", "sensitivity", "deletedCount", "deletedPieceCount", "deletedLineIndex", "pdfWidth", "pdfHeight", "scale", "rotateDegree", "isGridActive", "cellOfRectangle", "selectedLineInfo", "selectedCell", "columnLabels", "selectedRectangles", "filledCells"]),
     getIconYPosition() {
       const lineSensitivity = this.selectedLineInfo.drawing === 'column' || this.selectedLineInfo.drawing === 'columnPiece' ? 20 : 7
       return this.selectedLineInfo?.y1  - lineSensitivity + 'px'

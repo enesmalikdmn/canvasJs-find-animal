@@ -14,8 +14,8 @@ const state = {
     y:51
   }],
   drawCount: 0,
-  lineColor: "rgba(0, 144, 226, 0.5)",
-  selectedLineColor: "rgba(0, 144, 226, 1)",
+  lineColor: "rgba(1, 50, 32, 0.5)",
+  selectedLineColor: "rgba(1, 50, 32, 1)",
   previewLineType: 'column',
   sensitivity: 4,
   deletedCount: 0,

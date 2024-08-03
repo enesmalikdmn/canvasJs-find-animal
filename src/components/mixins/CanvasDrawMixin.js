@@ -178,7 +178,7 @@ export default {
             // this.ctx.clearRect(column?.x1, (column?.y1 - ((20 * (this.tableRowCount - 1)) + 10)) + 2, (column?.x2 - column?.x1) + 2, 2);
             this.ctx.fillStyle = "#FFFFFF";
             this.ctx.fillRect(column?.x1, (column?.y1 - ((20 * (this.tableRowCount - 1)) + 10)) - 1, (column?.x2 - column?.x1) + 2, 2)
-            this.ctx.fillStyle = 'rgba(0, 144, 226, 0.5)';
+            this.ctx.fillStyle = 'rgba(1, 50, 32, 0.5)';
             this.ctx.strokeRect(column?.x1, column?.y1 - ((20 * this.tableRowCount) + 10), column?.x2 - column?.x1, (20 * this.tableRowCount))
           })
         }
